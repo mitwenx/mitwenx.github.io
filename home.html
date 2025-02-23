@@ -213,46 +213,78 @@
     </footer>
 
     <script>
-    function showQualityOptions(title, language, qualities) {
-        const modal = document.getElementById('qualityModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalLanguage = document.getElementById('modalLanguage');
-        const qualityOptions = document.getElementById('qualityOptions');
+function showQualityOptions(title, language, qualities) {
+    const modal = document.getElementById('qualityModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalLanguage = document.getElementById('modalLanguage');
+    const qualityOptions = document.getElementById('qualityOptions');
 
-        modalTitle.textContent = title;
-        modalLanguage.textContent = language;
+    modalTitle.textContent = title;
+    modalLanguage.textContent = language;
 
-        // Clear previous options
-        qualityOptions.innerHTML = '';
+    // Clear previous options
+    qualityOptions.innerHTML = '';
 
-        // Add quality options with actual download links
-        qualities.forEach(quality => {
-            const option = document.createElement('div');
-            option.className = 'quality-option';
-            option.innerHTML = `
-                <a href="${quality.link}" target="_blank">
-                    <span>${quality.quality}</span>
-                    <span class="size">${quality.size}</span>
-                </a>
-            `;
-            qualityOptions.appendChild(option);
-        });
+    // Add quality options dynamically
+    qualities.forEach(quality => {
+        const option = document.createElement('div');
+        option.className = 'quality-option';
+        option.innerHTML = `
+            <a href="#" target="_blank">
+                <span>${quality}</span>
+            </a>
+        `;
+        qualityOptions.appendChild(option);
+    });
 
-        modal.classList.add('show');
+    modal.classList.add('show');
+}
+
+function closeModal() {
+    const modal = document.getElementById('qualityModal');
+    modal.classList.remove('show');
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('qualityModal');
+    if (event.target === modal) {
+        closeModal();
     }
+};
 
-    function closeModal() {
-        const modal = document.getElementById('qualityModal');
-        modal.classList.remove('show');
-    }
+// Search Functionality
+function searchMovies() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let movies = document.querySelectorAll('.movie-card');
 
-    // Close modal when clicking outside
-    window.onclick = function(event) {
-        const modal = document.getElementById('qualityModal');
-        if (event.target === modal) {
-            closeModal();
+    let found = false;
+    movies.forEach(movie => {
+        let title = movie.querySelector('.movie-info h3').textContent.toLowerCase();
+        if (title.includes(input)) {
+            movie.style.display = 'block';
+            found = true;
+        } else {
+            movie.style.display = 'none';
         }
+    });
+
+    // If the movie is not found in the current page, redirect to home2.html
+    if (!found) {
+        localStorage.setItem('searchQuery', input);
+        window.location.href = 'home2.html';
     }
-    </script>
+}
+
+// Apply search on page load if redirected
+window.onload = function() {
+    let searchQuery = localStorage.getItem('searchQuery');
+    if (searchQuery) {
+        document.getElementById('searchInput').value = searchQuery;
+        searchMovies();
+        localStorage.removeItem('searchQuery');
+    }
+};
+</script>
 </body>
 </html>
