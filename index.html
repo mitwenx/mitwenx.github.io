@@ -209,47 +209,46 @@
     </footer>
 
     <script>
-        function showQualityOptions(title, language, qualities) {
-            const modal = document.getElementById('qualityModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalLanguage = document.getElementById('modalLanguage');
-            const qualityOptions = document.getElementById('qualityOptions');
+    function showQualityOptions(title, language, qualities) {
+        const modal = document.getElementById('qualityModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalLanguage = document.getElementById('modalLanguage');
+        const qualityOptions = document.getElementById('qualityOptions');
 
-            modalTitle.textContent = title;
-            modalLanguage.textContent = language;
+        modalTitle.textContent = title;
+        modalLanguage.textContent = language;
 
-            // Clear previous options
-            qualityOptions.innerHTML = '';
+        // Clear previous options
+        qualityOptions.innerHTML = '';
 
-            // Add quality options
-            qualities.forEach(quality => {
-                const [res, size] = quality.split('|');
-                const option = document.createElement('div');
-                option.className = 'quality-option';
-                option.innerHTML = `
-                    <a href="https://t.me/ele4filesbot" target="_blank">
-                        <span>${res}</span>
-                        <span class="size">${size}</span>
-                    </a>
-                `;
-                qualityOptions.appendChild(option);
-            });
+        // Add quality options with actual download links
+        qualities.forEach(quality => {
+            const option = document.createElement('div');
+            option.className = 'quality-option';
+            option.innerHTML = `
+                <a href="${quality.link}" target="_blank">
+                    <span>${quality.quality}</span>
+                    <span class="size">${quality.size}</span>
+                </a>
+            `;
+            qualityOptions.appendChild(option);
+        });
 
-            modal.classList.add('show');
+        modal.classList.add('show');
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('qualityModal');
+        modal.classList.remove('show');
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modal = document.getElementById('qualityModal');
+        if (event.target === modal) {
+            closeModal();
         }
-
-        function closeModal() {
-            const modal = document.getElementById('qualityModal');
-            modal.classList.remove('show');
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('qualityModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
+    }
     </script>
 </body>
 </html>
