@@ -20,6 +20,58 @@ header {
     top: 0;
     z-index: 100;
 }
+/* Search Bar */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #242424;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.search-container input {
+    width: 0;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    transition: width 0.3s ease;
+}
+
+.search-container button {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.search-container button i {
+    color: #ffffff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+/* When the search bar is active */
+.search-container.active input {
+    width: 200px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Search Icon Hover */
+.search-container button:hover i {
+    color: #ff3d00;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .search-container.active input {
+        width: 150px;
+    }
+}
 
 nav {
     max-width: 1200px;
