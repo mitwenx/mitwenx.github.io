@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ele4Movies - Page 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ELE4MOVIES</div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modal -->
+    <div class="modal" id="qualityModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Movie Title</h2>
+                <p id="modalLanguage">Audio Language</p>
+            </div>
+            <div class="quality-options" id="qualityOptions">
+                <!-- Quality options will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+           <div class="movie-card">
+
+                <div class="movie-info">
+                 <style>
+  p {
+    margin-bottom: 15px; /* Adjust this value for more or less spacing */
+  }
+</style>
+
+<h3>Disclaimer</h3>                
+
+                    <p>• We do not store any copyright-protected content on our websites or servers. All posts are made solely for educational purposes, and any linked content is hosted on third-party websites.</p>
+
+<p>• Since freedom of speech is respected, we do not engage in any form of copyright infringement.</p>
+
+<p>• <strong>This is a promotional website only.</strong> All downloadable content provided on this site (all materials) is intended for testing and promotional purposes only.</p>
+
+<p>• The files placed here are for introductory purposes.</p>
+
+<p>• <strong>We highly encourage users to support the creators.</strong></p>
+
+<p>• Please purchase the CDs, DVDs, or digital versions of movies and music from the original authors or developers.</p>
+
+<p>• <strong>If you do not agree</strong> with these terms, please disconnect from this site immediately.</p>
+
+<p>• By remaining on this site, you acknowledge and agree to the above disclaimer, thereby absolving this site of any responsibility henceforth.</p>
+
+<p>• All files found on this site have been collected from various sources on the web and are believed to be in the public domain.</p>
+
+<p>• All logos and trademarks are the property of their respective owners.</p>
+
+<p>• <strong>Users should delete any downloaded content</strong> within 24 hours and purchase the original CD, DVD, or digital version from a legitimate source.</p>
+
+<p>• If you are the rightful owner of any content posted here and object to its display, or if you represent a copyright enforcement entity and wish for content to be removed, please contact us immediately, and we will take action accordingly.</p>
+
+                </div>
+           </div>
+
+            <!-- Add more movie cards here following the same pattern -->
+
+        </div>
+
+        <div class="pagination">
+            <a href="home.html">1</a>
+            <a href="home2.html">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <span>...</span>
+            <a href="index.html">Next</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Ele4Movies. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">DMCA</a>
+                <a href="#">Contact Us</a>
+                <a href="#">About Us</a>
+                <a href="#" class="active" >Site Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showQualityOptions(title, language, qualities) {
+            const modal = document.getElementById('qualityModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalLanguage = document.getElementById('modalLanguage');
+            const qualityOptions = document.getElementById('qualityOptions');
+
+            modalTitle.textContent = title;
+            modalLanguage.textContent = language;
+
+            // Clear previous options
+            qualityOptions.innerHTML = '';
+
+            // Add quality options
+            qualities.forEach(quality => {
+                const [res, size] = quality.split('|');
+                const option = document.createElement('div');
+                option.className = 'quality-option';
+                option.innerHTML = `
+                    <a href="https://t.me/ele4filesbot" target="_blank">
+                        <span>${res}</span>
+                        <span class="size">${size}</span>
+                    </a>
+                `;
+                qualityOptions.appendChild(option);
+            });
+
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('qualityModal');
+            modal.classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('qualityModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
