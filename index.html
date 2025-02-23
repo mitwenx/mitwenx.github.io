@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ele4Movies - Download Movies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ELE4MOVIES</div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">English Movies</a>
+                <a href="#">Dual Audio</a>
+                <a href="#">Web Series</a>
+                <a href="#">Anime</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modal -->
+    <div class="modal" id="qualityModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Movie Title</h2>
+                <p id="modalLanguage">Audio Language</p>
+            </div>
+            <div class="quality-options" id="qualityOptions">
+                <!-- Quality options will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="movie-grid">
+            <!-- Previous movie cards structure remains the same, just update the onclick -->
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('Mufasa: The Lion King (2024)', 'Dual Audio {Hindi-English}', ['480p|530MB', '720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2024/12/Download-Mufasa-The-Lion-King-MoviesMod.jpg" alt="Mufasa: The Lion King">
+                    <div class="quality-badge">
+                        <span>480p</span>
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Mufasa: The Lion King (2024)</h3>
+                    <p>Dual Audio {Hindi-English}</p>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('Zero Day (2024)', 'Season 1 {Hindi-English}', ['480p|530MB', '720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2025/02/Download-Zero-Day-S01-Hindi-Dubbed-480p-720p-1080p.jpg" alt="Zero Day">
+                    <div class="quality-badge">
+                        <span>480p</span>
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Zero Day (2024)</h3>
+                    <p>Season 1 {Hindi-English}</p>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('Reacher (2024)', 'Season 1-3 {Hindi-English}', ['480p|530MB', '720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2022/02/Download-Reacher-S01-Hindi-Dubbed-480p-720p-1080p.jpg" alt="Reacher">
+                    <div class="quality-badge">
+                        <span>480p</span>
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Reacher (2024)</h3>
+                    <p>Season 1-3 {Hindi-English}</p>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('Autumn and the Black Jaguar (2024)', 'Dual Audio {Hindi-English}', ['480p|530MB', '720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2024/06/Download-Autumn-and-the-Black-Jaguar-MoviesMod.jpg" alt="Autumn and the Black Jaguar">
+                    <div class="quality-badge">
+                        <span>480p</span>
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Autumn and the Black Jaguar (2024)</h3>
+                    <p>Dual Audio {Hindi-English}</p>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('Day of the Fight (2023)', 'English with Subtitles', ['480p|530MB', '720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2025/02/Day-of-the-Fight-2023-720p.jpg" alt="Day of the Fight">
+                    <div class="quality-badge">
+                        <span>480p</span>
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Day of the Fight (2023)</h3>
+                    <p>English with Subtitles</p>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('Nickel Boys (2024)', 'Dual Audio {Hindi-English}', ['480p|530MB', '720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2025/02/Download-Nickel-Boys-MoviesMod.jpg" alt="Nickel Boys">
+                    <div class="quality-badge">
+                        <span>480p</span>
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Nickel Boys (2024)</h3>
+                    <p>Dual Audio {Hindi-English}</p>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('Love Is Blind (Season 1-8)', 'Dual Audio {Hindi-English}', ['720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2021/08/Download-Love-Is-Blind-S01-Hindi-English-720p-HEVC-200x300.jpg" alt="Love Is Blind">
+                    <div class="quality-badge">
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Love Is Blind (Season 1-8)</h3>
+                    <p>Dual Audio {Hindi-English}</p>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('Homestead (2024)', 'English with Subtitles', ['480p|530MB', '720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2025/02/Homestead-2024-720p.jpg" alt="Homestead">
+                    <div class="quality-badge">
+                        <span>480p</span>
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Homestead (2024)</h3>
+                    <p>English with Subtitles</p>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('La Cocina (2024)', 'Spanish with Subtitles', ['480p|530MB', '720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2025/02/La-Cocina-2024-720p.jpg" alt="La Cocina">
+                    <div class="quality-badge">
+                        <span>480p</span>
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>La Cocina (2024)</h3>
+                    <p>Spanish with Subtitles</p>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-poster" onclick="showQualityOptions('Lesson Learned (2024)', 'Hungarian with Subtitles', ['480p|530MB', '720p|1.2GB', '1080p|3GB'])">
+                    <img src="https://moviesmod.how/wp-content/uploads/2025/02/Lesson-Learned-2024-720p.jpg" alt="Lesson Learned">
+                    <div class="quality-badge">
+                        <span>480p</span>
+                        <span>720p</span>
+                        <span>1080p</span>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Lesson Learned (2024)</h3>
+                    <p>Hungarian with Subtitles</p>
+                </div>
+            </div>
+
+            <!-- More movie cards following the same pattern -->
+        </div>
+
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="page2.html">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <span>...</span>
+            <a href="page2.html">Next</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Ele4Movies. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">DMCA</a>
+                <a href="#">Contact Us</a>
+                <a href="#">About Us</a>
+                <a href="disclaimer.html" class="active" >Site Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showQualityOptions(title, language, qualities) {
+            const modal = document.getElementById('qualityModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalLanguage = document.getElementById('modalLanguage');
+            const qualityOptions = document.getElementById('qualityOptions');
+
+            modalTitle.textContent = title;
+            modalLanguage.textContent = language;
+
+            // Clear previous options
+            qualityOptions.innerHTML = '';
+
+            // Add quality options
+            qualities.forEach(quality => {
+                const [res, size] = quality.split('|');
+                const option = document.createElement('div');
+                option.className = 'quality-option';
+                option.innerHTML = `
+                    <a href="https://t.me/ele4filesbot" target="_blank">
+                        <span>${res}</span>
+                        <span class="size">${size}</span>
+                    </a>
+                `;
+                qualityOptions.appendChild(option);
+            });
+
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('qualityModal');
+            modal.classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('qualityModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
