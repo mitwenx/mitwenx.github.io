@@ -48,7 +48,16 @@
 
     setInterval(updateTimer, 1000);
     
-    window.location.replace("https://mitwenx.github.io/index.html"); // Replace with your ad page URL   
+        (function preventBack() {
+        history.pushState(null, "", location.href);
+        setTimeout(function () {
+            history.pushState(null, "", location.href);
+        }, 0);
+    })();
+
+    window.onpopstate = function () {
+        location.href = "https://mitwenx.github.io/index.html"; // Redirect to ad page
+    };
     </script>
     
 </body>
