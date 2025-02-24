@@ -47,6 +47,14 @@
     }
 
     setInterval(updateTimer, 1000);
+    
+        // Push a new state to prevent back navigation
+    history.pushState(null, "", location.href);
+
+    window.onpopstate = function () {
+        // Redirect users to the same ad page again
+        location.href = "index.html"; // Change this to the correct ad page URL if needed
+    };
     </script>
     
 </body>
