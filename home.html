@@ -14,6 +14,10 @@
             <div class="logo">ELE4MOVIES NOTE THIS IS ONLY TEMPLATE</div>
         </nav>
     </header>
+           <div class="search-container">
+           <input type="text" id="search-bar" placeholder="Search for a movie..." onkeyup="searchMovies()">
+    </div>
+    
 </body>
 
     <!-- Modal -->
@@ -249,6 +253,22 @@
             closeModal();
         }
     }
+        // Your existing JavaScript code will be here...
+
+// ADD THIS FUNCTION INSIDE THE EXISTING SCRIPT TAG
+function searchMovies() {
+    let input = document.getElementById("search-bar").value.toLowerCase();
+    let movies = document.querySelectorAll(".movie-card");
+
+    movies.forEach(movie => {
+        let title = movie.querySelector(".movie-info h3").innerText.toLowerCase();
+        if (title.includes(input)) {
+            movie.style.display = "block";
+        } else {
+            movie.style.display = "none";
+        }
+    });
+}
     </script>
 </body>
 </html>
