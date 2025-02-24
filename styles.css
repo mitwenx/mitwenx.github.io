@@ -301,17 +301,17 @@ footer {
     color: #ff3d00;
 }
 .search-container {
-    width: 80%;
-    max-width: 300px;
-    margin: 0.4rem auto;
+    width: 100%;
+    max-width: 350px;
+    margin: 0.5rem auto;
     display: flex;
     justify-content: center;
 }
 
 #search-bar {
-    width: 80%;
-    padding: 6px;
-    font-size: 0.8rem;
+    width: 100%;
+    padding: 7px;
+    font-size: 0.9rem;
     border: 2px solid #ff3d00;
     border-radius: 5px;
     background-color: #242424;
