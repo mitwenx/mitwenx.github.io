@@ -300,3 +300,25 @@ footer {
 .close-modal:hover {
     color: #ff3d00;
 }
+.search-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ff3d00;
+    border-radius: 5px;
+    background-color: #242424;
+    color: #ffffff;
+    outline: none;
+}
+
+#search-bar::placeholder {
+    color: #b0b0b0;
+}
