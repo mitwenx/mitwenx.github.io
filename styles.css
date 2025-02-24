@@ -322,3 +322,6 @@ footer {
 #search-bar::placeholder {
     color: #b0b0b0;
 }
+.movie-grid {
+    min-height: 300px; /* Adjust height as needed */
+}
