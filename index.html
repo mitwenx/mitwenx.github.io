@@ -48,16 +48,6 @@
 
     setInterval(updateTimer, 1000);
     
-        (function preventBack() {
-        history.pushState(null, "", location.href);
-        setTimeout(function () {
-            history.pushState(null, "", location.href);
-        }, 0);
-    })();
-
-    window.onpopstate = function () {
-        location.href = "https://mitwenx.github.io/index.html"; // Redirect to ad page
-    };
     </script>
     
 </body>
