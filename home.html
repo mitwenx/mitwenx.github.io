@@ -264,15 +264,25 @@
 function searchMovies() {
     let input = document.getElementById("search-bar").value.toLowerCase();
     let movies = document.querySelectorAll(".movie-card");
+    let noResultsMessage = document.getElementById("no-results-message");
+    let found = false; // Track if any movie is found
 
     movies.forEach(movie => {
         let title = movie.querySelector(".movie-info h3").innerText.toLowerCase();
         if (title.includes(input)) {
             movie.style.display = "block";
+            found = true;
         } else {
             movie.style.display = "none";
         }
     });
+
+    // Show message if no movies match
+    if (found) {
+        noResultsMessage.style.display = "none"; // Hide message
+    } else {
+        noResultsMessage.style.display = "block"; // Show message
+    }
 }
     </script>
 </body>
