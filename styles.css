@@ -66,15 +66,10 @@ main {
 
 /* Movie Grid */
 .movie-grid {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
-    /* optional: ensure there's some min height */
-    min-height: 300px;
 }
 
 /* Movie Card */
