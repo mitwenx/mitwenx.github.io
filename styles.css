@@ -20,6 +20,40 @@ header {
     top: 0;
     z-index: 100;
 }
+/* Ensure the navbar background is black */
+.navbar {
+  background-color: #000 !important;
+}
+
+/* Make the brand text (Ele4Movies) red */
+.navbar-brand {
+  color: red !important;
+}
+
+/* Optional: Keep the brand text red on hover */
+.navbar-brand:hover {
+  color: red;
+}
+
+/* When the hamburger button is active or focused, add a red border */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  border: 2px solid red;
+  position: relative; /* Needed for the pseudo-element positioning */
+}
+
+/* Add a small red square at the top-right corner of the toggler when clicked */
+.navbar-toggler:focus::after,
+.navbar-toggler:active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+}
 
 nav {
     max-width: 1200px;
