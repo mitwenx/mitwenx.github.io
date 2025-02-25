@@ -155,8 +155,8 @@ main {
 /* Footer */
 footer {
     background-color: #000000;
-    padding: 1rem 0;
-    margin-top: 4rem; /* Increased margin to move the footer lower */
+    padding: 1.5rem 0;
+    margin-top: 2rem;
 }
 
 .footer-content {
@@ -166,12 +166,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem; /* Increased gap to push elements down */
+    gap: 1rem;
 }
 
 .footer-links {
     display: flex;
-    gap: 1rem; /* Slightly increased gap for better spacing */
+    gap: 1.5rem;
 }
 
 .footer-links a {
@@ -182,30 +182,6 @@ footer {
 
 .footer-links a:hover {
     color: #ff3d00;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .movie-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 1rem;
-    }
-
-    .movie-info h3 {
-        font-size: 0.875rem;
-    }
-
-    .movie-info p {
-        font-size: 0.75rem;
-    }
-
-    .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 }
 
 /* Modal Styles */
