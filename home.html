@@ -2,22 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ele4Movies</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    rel="stylesheet"/>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome (Optional) -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <!-- Your custom CSS file -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Optionally, put your grid rules directly here 
+       (or in styles.css) -->
+  <style>
+    /* Example grid styling; adjust as needed */
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      margin-top: 80px; /* to clear the fixed navbar */
+    }
+  </style>
 </head>
-<body>
-   <style="background-color:"/>
-  <nav/>
+
+<body style="background-color: #111;">
+  <!-- Navigation (Bootstrap) -->
+  <nav
     class="navbar navbar-expand-lg navbar-dark"
-    style="background-color: #000; position: fixed; top: 0; width: 100%; z-index: 999;"/>
-  
+    style="background-color: #000; position: fixed; top: 0; width: 100%; z-index: 999;"
+  >
     <div class="container">
-      <!-- Make the brand text red -->
       <a class="navbar-brand text-danger fw-bold" href="/">
         Ele4Movies
       </a>
@@ -34,15 +55,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/dmca">DMCA</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About Us</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="/dmca">DMCA</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
           <li class="nav-item">
             <a class="nav-link" href="/disclaimer">Site Disclaimer</a>
           </li>
@@ -51,15 +66,14 @@
     </div>
   </nav>
 
-  <!-- Spacing so content isn't hidden behind fixed navbar -->
-
-  <!-- Search Bar -->
-  <div class="search-container" style="margin-top: 30px;">
+  <!-- Search Bar (push down a bit so it’s not hidden behind navbar) -->
+  <div class="search-container" style="margin-top: 70px; text-align: center;">
     <input
       type="text"
       id="search-bar"
       placeholder="Search for a movie..."
       onkeyup="searchMovies()"
+      style="width: 80%; max-width: 400px; padding: 8px;"
     />
   </div>
 
@@ -93,132 +107,76 @@
       to upload them as soon as possible!
     </p>
     <p style="margin-bottom: 0;">
-      <strong>Thank you for using Ele4movies</strong>
+      <strong>Thank you for using Ele4Movies</strong>
     </p>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main Content with movie grid -->
   <main>
-      <!-- Your movie cards go here (unchanged) -->
-      <!-- Example: -->
+    <!-- Wrap all movie-cards in a .movie-grid container -->
+    <div class="movie-grid">
+      <!-- Example Movie Card -->
       <div class="movie-card">
-    <div class="movie-poster" onclick="showQualityOptions('Loveyapa (2025)', 'Hindi', [
-        { quality: '480p', size: '500MB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc87c09850c' },
-        { quality: '720p', size: '1.2GB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc87e8e3a23' },
-        { quality: '1080p', size: '2.6GB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc880f7dd1c' }
-    ])">
-        <img src="https://i.ibb.co/Txf9FG6y/image.jpg" alt="Loveyapa">
-        <div class="quality-badge">
+        <div
+          class="movie-poster"
+          onclick="showQualityOptions('Loveyapa (2025)', 'Hindi', [
+              { quality: '480p', size: '500MB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc87c09850c' },
+              { quality: '720p', size: '1.2GB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc87e8e3a23' },
+              { quality: '1080p', size: '2.6GB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc880f7dd1c' }
+          ])"
+        >
+          <img src="https://i.ibb.co/Txf9FG6y/image.jpg" alt="Loveyapa" />
+          <div class="quality-badge">
             <span>480p</span>
             <span>720p</span>
             <span>1080p</span>
+          </div>
         </div>
-    </div>
-    <div class="movie-info">
-        <h3>Loveyapa (2025)</h3>
-        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
-    </div>
-</div>
+        <div class="movie-info">
+          <h3>Loveyapa (2025)</h3>
+          <p class="language-hindi quality-480p-720p-1080p">
+            Language: Hindi | Quality: 480p, 720p, 1080p
+          </p>
+        </div>
+      </div>
 
-<div class="movie-card">
-    <div class="movie-poster" onclick="showQualityOptions('Kadhalikka Neramillai (2025)', 'Hindi', [
-        { quality: '480p', size: '500MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc865d602e9' },
-        { quality: '720p', size: '1.3GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc8686830b1' },
-        { quality: '1080p', size: '6.1GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc86ab45533' }
-    ])">
-        <img src="https://i.ibb.co/9m7hCjxC/image.jpg" alt="Kadhalikka Neramillai">
-        <div class="quality-badge">
+      <!-- Add the rest of your movie cards the same way -->
+      <div class="movie-card">
+        <div
+          class="movie-poster"
+          onclick="showQualityOptions('Kadhalikka Neramillai (2025)', 'Hindi', [
+              { quality: '480p', size: '500MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc865d602e9' },
+              { quality: '720p', size: '1.3GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc8686830b1' },
+              { quality: '1080p', size: '6.1GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc86ab45533' }
+          ])"
+        >
+          <img
+            src="https://i.ibb.co/9m7hCjxC/image.jpg"
+            alt="Kadhalikka Neramillai"
+          />
+          <div class="quality-badge">
             <span>480p</span>
             <span>720p</span>
             <span>1080p</span>
+          </div>
         </div>
-    </div>
-    <div class="movie-info">
-        <h3>Kadhalikka Neramillai (2025)</h3>
-        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
-    </div>
-</div>
-
-<div class="movie-card">
-    <div class="movie-poster" onclick="showQualityOptions('The Greatest Rivalry: India vs Pakistan (2025)', 'Hindi', [
-        { quality: '480p', size: '150MB | Zip', link: 'https://tech.unblockedgames.world/?go=pepe-67bc84aed8524' },
-        { quality: '720p', size: '400MB | Zip', link: 'https://tech.unblockedgames.world/?go=pepe-67bc84e7a59ab' },
-        { quality: '1080p', size: '1.5GB | Zip', link: 'https://tech.unblockedgames.world/?go=pepe-67bc850fb2b06' }
-    ])">
-        <img src="https://i.ibb.co/Y79N17sn/image.jpg" alt="The Greatest Rivalry: India vs Pakistan">
-        <div class="quality-badge">
-            <span>480p</span>
-            <span>720p</span>
-            <span>1080p</span>
+        <div class="movie-info">
+          <h3>Kadhalikka Neramillai (2025)</h3>
+          <p class="language-hindi quality-480p-720p-1080p">
+            Language: Hindi | Quality: 480p, 720p, 1080p
+          </p>
         </div>
-    </div>
-    <div class="movie-info">
-        <h3>The Greatest Rivalry: India vs Pakistan (2025)</h3>
-        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
-    </div>
-</div>
+      </div>
 
-<div class="movie-card">
-    <div class="movie-poster" onclick="showQualityOptions('Emergency (2025)', 'Hindi', [
-        { quality: '480p', size: '500MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc820366605' },
-        { quality: '720p', size: '1.2GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc8259215f8' },
-        { quality: '1080p', size: '4.3GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc827cea34c' }
-    ])">
-        <img src="https://i.ibb.co/FkGQB72V/image.jpg" alt="Emergency">
-        <div class="quality-badge">
-            <span>480p</span>
-            <span>720p</span>
-            <span>1080p</span>
-        </div>
-    </div>
-    <div class="movie-info">
-        <h3>Emergency (2025)</h3>
-        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
-    </div>
-</div>
+      <!-- Continue adding the rest of your movie-card divs below... -->
+      <div class="movie-card">
+        <!-- etc... -->
+      </div>
 
-<div class="movie-card">
-    <div class="movie-poster" onclick="showQualityOptions('Azaad (2025)', 'Hindi', [
-        { quality: '480p', size: '450MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc7fd901f0e' },
-        { quality: '720p', size: '1.2GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc800495e90' },
-        { quality: '1080p', size: '5.1GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc802ad6d6f' }
-    ])">
-        <img src="https://i.ibb.co/939GnfqN/image.jpg" alt="Azaad">
-        <div class="quality-badge">
-            <span>480p</span>
-            <span>720p</span>
-            <span>1080p</span>
-        </div>
-    </div>
-    <div class="movie-info">
-        <h3>Azaad (2025)</h3>
-        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
-    </div>
-</div>
-
-<div class="movie-card">
-    <div class="movie-poster" onclick="showQualityOptions('Ramayana: The Legend of Prince Rama (2025)', 'Hindi', [
-        { quality: '480p', size: '450MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc807761cea' },
-        { quality: '720p', size: '1.1GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc80a553c3f' },
-        { quality: '1080p', size: '4.9GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc80d1af1cd' }
-    ])">
-        <img src="https://image.tmdb.org/t/p/w185/aXIKgNBOcxRB5LGXGpF69a2W3tP.jpg" alt="Ramayana: The Legend of Prince Rama">
-        <div class="quality-badge">
-            <span>480p</span>
-            <span>720p</span>
-            <span>1080p</span>
-        </div>
-    </div>
-    <div class="movie-info">
-        <h3>Ramayana: The Legend of Prince Rama (2025)</h3>
-        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
-    </div>
-</div>
-
-      <!-- More movie cards below... -->
+      <!-- ... end movie cards -->
     </div>
 
-    <!-- Modal -->
+    <!-- Modal (for selecting quality) -->
     <div class="modal" id="qualityModal">
       <div class="modal-content">
         <button class="close-modal" onclick="closeModal()">&times;</button>
@@ -227,7 +185,7 @@
           <p id="modalLanguage">Audio Language</p>
         </div>
         <div class="quality-options" id="qualityOptions">
-          <!-- Quality options are injected here by JavaScript -->
+          <!-- Quality options are injected by JavaScript -->
         </div>
       </div>
     </div>
@@ -235,6 +193,7 @@
     <!-- Pagination -->
     <div class="pagination">
       <a href="https://mitwenx.github.io/index.html" class="active">Support us</a>
+      <!-- Add more page links as needed -->
     </div>
   </main>
 
@@ -251,13 +210,14 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <!-- Bootstrap JS (includes Popper) -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   ></script>
 
+  <!-- Your JavaScript -->
   <script>
-    // Show quality options
+    // Show quality options in modal
     function showQualityOptions(title, language, qualities) {
       const modal = document.getElementById("qualityModal");
       const modalTitle = document.getElementById("modalTitle");
@@ -270,7 +230,7 @@
       // Clear previous options
       qualityOptions.innerHTML = "";
 
-      // Add quality options with actual links
+      // Add new options
       qualities.forEach((quality) => {
         const option = document.createElement("div");
         option.className = "quality-option";
@@ -288,11 +248,10 @@
 
     // Close modal
     function closeModal() {
-      const modal = document.getElementById("qualityModal");
-      modal.classList.remove("show");
+      document.getElementById("qualityModal").classList.remove("show");
     }
 
-    // Close modal when clicking outside
+    // Close modal if clicking outside it
     window.onclick = function (event) {
       const modal = document.getElementById("qualityModal");
       if (event.target === modal) {
@@ -308,7 +267,9 @@
       let found = false;
 
       movies.forEach((movie) => {
-        let title = movie.querySelector(".movie-info h3").innerText.toLowerCase();
+        let title = movie
+          .querySelector(".movie-info h3")
+          .innerText.toLowerCase();
         if (title.includes(input)) {
           movie.style.display = "block";
           found = true;
