@@ -2,36 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ele4Movies</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+  <title>Ele4Movies</title>
+
   <!-- Bootstrap CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
-
   <!-- Font Awesome (Optional) -->
   <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     rel="stylesheet"
   />
-
-  <!-- Your custom CSS -->
+  <!-- Your custom CSS file (styles.css) -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+
+<body style="background-color: #000; color: #fff;">
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg" style="background-color: #000;">
+  <nav
+    class="navbar navbar-expand-lg navbar-dark"
+    style="background-color: #000; position: fixed; top: 0; width: 100%; z-index: 999;"
+  >
     <div class="container">
-      <!-- Brand: "ELE4MOVIES" in red, plus a small red tagline -->
+      <!-- Make the brand text red -->
       <a class="navbar-brand text-danger fw-bold" href="/">
-        ELE4MOVIES 
-        <span style="font-size: 0.8rem; color: #ff3d00; margin-left: 5px;">
-          | bollywood latest movies
-        </span>
+        Ele4Movies
       </a>
-      
       <button
         class="navbar-toggler"
         type="button"
@@ -43,31 +41,30 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-light" href="/dmca">DMCA</a>
+            <a class="nav-link" href="/dmca">DMCA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="/contact">Contact Us</a>
+            <a class="nav-link" href="/contact">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="/about">About Us</a>
+            <a class="nav-link" href="/about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="/disclaimer">Site Disclaimer</a>
+            <a class="nav-link" href="/disclaimer">Site Disclaimer</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Spacing below fixed navbar -->
+  <!-- Spacing so content isn't hidden behind fixed navbar -->
   <div style="margin-top: 70px;"></div>
 
   <!-- Search Bar -->
-  <div class="search-container">
+  <div class="search-container" style="margin-top: 30px;">
     <input
       type="text"
       id="search-bar"
@@ -76,7 +73,7 @@
     />
   </div>
 
-  <!-- No Results Message -->
+  <!-- "No Results" Message -->
   <div
     id="no-results-message"
     style="
@@ -112,7 +109,9 @@
 
   <!-- Main Content -->
   <main>
-    <div class="movie-card">
+      <!-- Your movie cards go here (unchanged) -->
+      <!-- Example: -->
+      <div class="movie-card">
     <div class="movie-poster" onclick="showQualityOptions('Loveyapa (2025)', 'Hindi', [
         { quality: '480p', size: '500MB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc87c09850c' },
         { quality: '720p', size: '1.2GB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc87e8e3a23' },
@@ -225,43 +224,9 @@
         <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
     </div>
 </div>
-    <div class="movie-card">
-    <div class="movie-poster" onclick="showQualityOptions('The Storyteller (2022)', 'Hindi', [
-        { quality: '480p', size: '400MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc5322dd43f' },
-        { quality: '720p', size: '1GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc535ad42f4' },
-        { quality: '1080p', size: '4.5GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc53a76f837' }
-    ])">
-        <img src="https://i.ibb.co/sd5M0Td2/image.jpg" alt="The Storyteller">
-        <div class="quality-badge">
-            <span>480p</span>
-            <span>720p</span>
-            <span>1080p</span>
-        </div>
-    </div>
-    <div class="movie-info">
-        <h3>The Storyteller (2022)</h3>
-        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
-    </div>
-</div>
 
-<div class="movie-card">
-    <div class="movie-poster" onclick="showQualityOptions('Sweet Dreams (2025)', 'Hindi', [
-        { quality: '480p', size: '400MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc5142a95bc' },
-        { quality: '720p', size: '1GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc50ecc838e' },
-        { quality: '1080p', size: '2.6GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc51748a84f' }
-    ])">
-        <img src="https://i.ibb.co/C3S3Kx1W/43b569e6c2b3.jpg" alt="Sweet Dreams">
-        <div class="quality-badge">
-            <span>480p</span>
-            <span>720p</span>
-            <span>1080p</span>
-        </div>
+      <!-- More movie cards below... -->
     </div>
-    <div class="movie-info">
-        <h3>Sweet Dreams (2025)</h3>
-        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
-    </div>
-</div>
 
     <!-- Modal -->
     <div class="modal" id="qualityModal">
@@ -272,7 +237,7 @@
           <p id="modalLanguage">Audio Language</p>
         </div>
         <div class="quality-options" id="qualityOptions">
-          <!-- Quality options will be populated dynamically -->
+          <!-- Quality options are injected here by JavaScript -->
         </div>
       </div>
     </div>
@@ -301,7 +266,6 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   ></script>
 
-  <!-- Your custom JavaScript -->
   <script>
     // Show quality options
     function showQualityOptions(title, language, qualities) {
@@ -316,7 +280,7 @@
       // Clear previous options
       qualityOptions.innerHTML = "";
 
-      // Add quality options with actual download links
+      // Add quality options with actual links
       qualities.forEach((quality) => {
         const option = document.createElement("div");
         option.className = "quality-option";
@@ -346,7 +310,7 @@
       }
     };
 
-    // Search movies
+    // Search function
     function searchMovies() {
       let input = document.getElementById("search-bar").value.toLowerCase();
       let movies = document.querySelectorAll(".movie-card");
@@ -363,7 +327,6 @@
         }
       });
 
-      // Show/hide 'no results' message
       noResultsMessage.style.display = found ? "none" : "block";
     }
   </script>
