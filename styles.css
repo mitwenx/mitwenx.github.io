@@ -155,13 +155,13 @@ main {
 /* Footer */
 footer {
     background-color: #000000;
-    padding: 2rem 0;
+    padding: 1rem 0;
     margin-top: 2rem; /* Increased margin to move the footer lower */
 }
 
 .footer-content {
     max-width: 1200px;
-    margin-low: 20px;
+    margin: 0 auto;
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
