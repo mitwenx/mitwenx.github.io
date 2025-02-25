@@ -7,7 +7,7 @@
 
 body {
     /* Pure black background */
-    background-color: #000;
+    background-color: #1a1a1a;
     color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
@@ -48,7 +48,7 @@ body {
     border: 2px solid #ff3d00;
     border-radius: 5px;
     /* black or dark gray search background */
-    background-color: #000;
+    background-color: #242424;
     color: #ffffff;
     outline: none;
 }
