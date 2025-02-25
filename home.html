@@ -10,7 +10,7 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
-  
+
   <!-- Font Awesome (Optional) -->
   <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -20,11 +20,18 @@
   <!-- Your custom CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-dark text-light">
+<body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg" style="background-color: #000;">
     <div class="container">
-      <a class="navbar-brand" href="/">Ele4Movies</a>
+      <!-- Brand: "ELE4MOVIES" in red, plus a small red tagline -->
+      <a class="navbar-brand text-danger fw-bold" href="/">
+        ELE4MOVIES 
+        <span style="font-size: 0.8rem; color: #ff3d00; margin-left: 5px;">
+          | bollywood latest movies
+        </span>
+      </a>
+      
       <button
         class="navbar-toggler"
         type="button"
@@ -38,30 +45,29 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <!-- "ms-auto" pushes nav items to the right -->
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/dmca">DMCA</a>
+            <a class="nav-link text-light" href="/dmca">DMCA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
+            <a class="nav-link text-light" href="/contact">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about">About Us</a>
+            <a class="nav-link text-light" href="/about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/disclaimer">Site Disclaimer</a>
+            <a class="nav-link text-light" href="/disclaimer">Site Disclaimer</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Add spacing to avoid the navbar overlapping content -->
+  <!-- Spacing below fixed navbar -->
   <div style="margin-top: 70px;"></div>
 
   <!-- Search Bar -->
-  <div class="search-container" style="margin-top: 30px;">
+  <div class="search-container">
     <input
       type="text"
       id="search-bar"
@@ -106,37 +112,7 @@
 
   <!-- Main Content -->
   <main>
-    <div class="movie-grid">
-      <!-- Example Movie Cards -->
-      <div class="movie-card">
-        <div
-          class="movie-poster"
-          onclick="showQualityOptions('Chhaava (2025)', 'Hindi', [
-            { quality: 'HQ 1080p', size: '13GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc297ae17d2' },
-            { quality: '1080p', size: '3GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc29aa663a2' },
-            { quality: '720p', size: '1.3GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc29d33f57d' },
-            { quality: '480p', size: '500MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc2a0905044' }
-          ])"
-        >
-          <img
-            src="https://i.ibb.co/fY4zXD70/9bc6f7d39a0e.jpg"
-            alt="Chhaava"
-          />
-          <div class="quality-badge">
-            <span>1080p</span>
-            <span>720p</span>
-            <span>480p</span>
-          </div>
-        </div>
-        <div class="movie-info">
-          <h3>Chhaava (2025)</h3>
-          <p class="language-hindi quality-hq1080p-1080p-720p-480p">
-            Language: Hindi Quality: HQ 1080p, 1080p, 720p, 480p
-          </p>
-        </div>
-      </div>
-
-       <div class="movie-card">
+    <div class="movie-card">
     <div class="movie-poster" onclick="showQualityOptions('Loveyapa (2025)', 'Hindi', [
         { quality: '480p', size: '500MB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc87c09850c' },
         { quality: '720p', size: '1.2GB | HDTS', link: 'https://tech.unblockedgames.world/?go=pepe-67bc87e8e3a23' },
@@ -249,10 +225,43 @@
         <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
     </div>
 </div>
-        
-      <!-- ... Add your other movie cards here ... -->
-
+    <div class="movie-card">
+    <div class="movie-poster" onclick="showQualityOptions('The Storyteller (2022)', 'Hindi', [
+        { quality: '480p', size: '400MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc5322dd43f' },
+        { quality: '720p', size: '1GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc535ad42f4' },
+        { quality: '1080p', size: '4.5GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc53a76f837' }
+    ])">
+        <img src="https://i.ibb.co/sd5M0Td2/image.jpg" alt="The Storyteller">
+        <div class="quality-badge">
+            <span>480p</span>
+            <span>720p</span>
+            <span>1080p</span>
+        </div>
     </div>
+    <div class="movie-info">
+        <h3>The Storyteller (2022)</h3>
+        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
+    </div>
+</div>
+
+<div class="movie-card">
+    <div class="movie-poster" onclick="showQualityOptions('Sweet Dreams (2025)', 'Hindi', [
+        { quality: '480p', size: '400MB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc5142a95bc' },
+        { quality: '720p', size: '1GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc50ecc838e' },
+        { quality: '1080p', size: '2.6GB', link: 'https://tech.unblockedgames.world/?go=pepe-67bc51748a84f' }
+    ])">
+        <img src="https://i.ibb.co/C3S3Kx1W/43b569e6c2b3.jpg" alt="Sweet Dreams">
+        <div class="quality-badge">
+            <span>480p</span>
+            <span>720p</span>
+            <span>1080p</span>
+        </div>
+    </div>
+    <div class="movie-info">
+        <h3>Sweet Dreams (2025)</h3>
+        <p class="language-hindi quality-480p-720p-1080p">Language: Hindi | Quality: 480p, 720p, 1080p</p>
+    </div>
+</div>
 
     <!-- Modal -->
     <div class="modal" id="qualityModal">
@@ -268,7 +277,7 @@
       </div>
     </div>
 
-    <!-- Pagination (example) -->
+    <!-- Pagination -->
     <div class="pagination">
       <a href="https://mitwenx.github.io/index.html" class="active">Support us</a>
     </div>
