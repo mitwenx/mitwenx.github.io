@@ -6,70 +6,73 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #1a1a1a;
+    /* Pure black background */
+    background-color: #000;
     color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
 }
 
-/* Header Styles */
-header {
-    background-color: #000000;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* Override Bootstrap's .bg-dark if needed
+   (Already inlined in the nav, but you can do this too) */
+.navbar {
+    background-color: #000 !important;
 }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Make sure brand text is red and bold */
+.navbar-brand {
+    color: #ff3d00 !important;
+    font-weight: bold !important;
+    font-size: 1.4rem !important;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+/* You can also style the tagline in .navbar-brand span if you want: */
+.navbar-brand span {
+    font-size: 0.8rem;
     color: #ff3d00;
 }
 
-.nav-links {
+/* Search Container */
+.search-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 1rem auto; /* Some margin */
     display: flex;
-    gap: 1.5rem;
+    justify-content: center;
 }
 
-.nav-links a {
+#search-bar {
+    width: 100%;
+    padding: 7px;
+    font-size: 0.9rem;
+    border: 2px solid #ff3d00;
+    border-radius: 5px;
+    /* black or dark gray search background */
+    background-color: #000;
     color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    outline: none;
 }
 
-.nav-links a:hover, .nav-links a.active {
-    color: #ff3d00;
-}
-
-/* Main Content */
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+#search-bar::placeholder {
+    color: #b0b0b0;
 }
 
 /* Movie Grid */
 .movie-grid {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
+    /* optional: ensure there's some min height */
+    min-height: 300px;
 }
 
 /* Movie Card */
 .movie-card {
-    background-color: #242424;
+    background-color: #242424; /* Dark gray for the card itself */
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -77,11 +80,6 @@ main {
 
 .movie-card:hover {
     transform: translateY(-5px);
-}
-
-.movie-card a {
-    text-decoration: none;
-    color: inherit;
 }
 
 .movie-poster {
@@ -140,7 +138,8 @@ main {
     margin-top: 2rem;
 }
 
-.pagination a, .pagination span {
+.pagination a,
+.pagination span {
     padding: 0.5rem 1rem;
     background-color: #242424;
     color: #ffffff;
@@ -149,13 +148,14 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.pagination a:hover, .pagination a.active {
+.pagination a:hover,
+.pagination a.active {
     background-color: #ff3d00;
 }
 
 /* Footer */
 footer {
-    background-color: #000000;
+    background-color: #000;
     padding: 1.5rem 0;
     margin-top: 2rem;
 }
@@ -187,8 +187,9 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    /* Hide nav links for mobile, show toggler */
+    .navbar-nav {
+        text-align: center;
     }
 
     .movie-grid {
@@ -299,29 +300,4 @@ footer {
 
 .close-modal:hover {
     color: #ff3d00;
-}
-.search-container {
-    width: 100%;
-    max-width: 350px;
-    margin: 0.5rem auto;
-    display: flex;
-    justify-content: center;
-}
-
-#search-bar {
-    width: 100%;
-    padding: 7px;
-    font-size: 0.9rem;
-    border: 2px solid #ff3d00;
-    border-radius: 5px;
-    background-color: #242424;
-    color: #ffffff;
-    outline: none;
-}
-
-#search-bar::placeholder {
-    color: #b0b0b0;
-}
-.movie-grid {
-    min-height: 300px; /* Adjust height as needed */
 }
