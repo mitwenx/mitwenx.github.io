@@ -303,3 +303,8 @@ footer {
 .close-modal:hover {
     color: #ff3d00;
 }
+
+}
+.movie-grid {
+    min-height: 300px; /* Adjust height as needed */
+}
