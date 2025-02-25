@@ -302,7 +302,7 @@ footer {
 .search-container {
     width: 100%;
     max-width: 350px;
-    margin-top: 2rem; /* Increased margin-top to move search bar down */
+    margin-top: 4rem; /* Increased margin-top to move search bar down */
     margin-bottom: 0.5rem; /* Keeping the bottom margin as it is */
     margin-left: auto;   /* Keeping left/right margins as auto for centering */
     margin-right: auto;
