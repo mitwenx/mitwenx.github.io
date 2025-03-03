@@ -1,4 +1,4 @@
-    <script>
+
         // Food database (you can add more items here)
         const foodDatabase = [
             {
@@ -229,4 +229,4 @@
 
         // Initial load
         updateLogDisplay();
-    </script>
+    
