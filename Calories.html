@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Calorie Calculator</title>
+    <style>
+        :root {
+            --dark-color: #222;
+            --accent-color: #e50914;
+            --light-gray: #f0f0f0;
+            --white: #ffffff;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--dark-color);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        h3 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+        }
+        
+        .card {
+            background-color: #333;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+            border-top: 3px solid var(--accent-color);
+        }
+        
+        .search-section {
+            margin-bottom: 20px;
+        }
+        
+        #foodSearch {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: #444;
+            color: var(--white);
+            font-size: 16px;
+        }
+        
+        #foodSearch::placeholder {
+            color: #aaa;
+        }
+        
+        #foodSearch:focus {
+            outline: 2px solid var(--accent-color);
+            background-color: #555;
+        }
+        
+        .food-results {
+            background-color: #444;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .food-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #555;
+            transition: background-color 0.2s;
+        }
+        
+        .food-item:hover {
+            background-color: #555;
+        }
+        
+        .food-item:last-child {
+            border-bottom: none;
+        }
+        
+        .calculator-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        @media (max-width: 480px) {
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        input, select {
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #444;
+            color: var(--white);
+            font-size: 16px;
+        }
+        
+        input:focus, select:focus {
+            outline: 2px solid var(--accent-color);
+            background-color: #555;
+        }
+        
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        button:hover {
+            background-color: #c50813;
+        }
+        
+        #selectedFood {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        #nutritionInfo {
+            margin-top: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+        
+        .nutrition-item {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .nutrition-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .nutrition-label {
+            font-size: 12px;
+            color: #bbb;
+        }
+        
+        .meal-log {
+            margin-top: 20px;
+        }
+        
+        .meal-category {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #444;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .meal-category-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .meal-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #555;
+        }
+        
+        .meal-entry:last-child {
+            border-bottom: none;
+        }
+        
+        .delete-btn {
+            color: var(--accent-color);
+            cursor: pointer;
+            font-size: 25px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        
+        .delete-btn:hover {
+            transform: scale(1.2);
+        }
+        
+        #totalCalories {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .summary-stats {
+            display: flex;
+            justify-content: space-between;
+            background-color: #444;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #bbb;
+        }
+        
+        /* Added styles for meal type selection */
+        .meal-selector {
+            display: flex;
+            flex-direction: column;
+            margin: 15px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .meal-option {
+            padding: 15px;
+            background-color: #444;
+            border-bottom: 1px solid #555;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .meal-option:hover {
+            background-color: #555;
+        }
+        
+        .meal-option:last-child {
+            border-bottom: none;
+        }
+        
+        .meal-option.selected {
+            background-color: #555;
+        }
+        
+        .meal-option-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #777;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .meal-option.selected .meal-option-circle {
+            border-color: var(--accent-color);
+        }
+        
+        .meal-option.selected .meal-option-circle:after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+        
+        /* Recent searches */
+        .recent-searches {
+            margin-bottom: 10px;
+        }
+        
+        .recent-search-tag {
+            display: inline-block;
+            background-color: #444;
+            padding: 5px 10px;
+            margin: 0 5px 5px 0;
+            border-radius: 15px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .recent-search-tag:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="full-width">
+            <h1>Personal Calorie Calculator</h1>
+        </div>
+        
+        <div class="card">
+            <h3>Food Search</h3>
+            <div class="search-section">
+                <div class="recent-searches" id="recentSearches">
+                    <div class="recent-search-tag" onclick="useRecentSearch('Apple')">Apple</div>
+                    <div class="recent-search-tag" onclick="useRecentSearch('Banana')">Banana</div>
+                    <div class="recent-search-tag" onclick="useRecentSearch('Dahi')">Dahi</div>
+                    <div class="recent-search-tag" onclick="useRecentSearch('Rice')">Rice</div>
+                </div>
+                <input type="text" id="foodSearch" placeholder="Search for food...">
+                <div class="food-results" id="foodResults"></div>
+            </div>
+            
+            <div id="selectedFood"></div>
+            
+            <div class="meal-selector" id="mealSelector">
+                <div class="meal-option selected" data-value="breakfast" onclick="selectMealType(this)">
+                    <span>Breakfast</span>
+                    <div class="meal-option-circle"></div>
+                </div>
+                <div class="meal-option" data-value="lunch" onclick="selectMealType(this)">
+                    <span>Lunch</span>
+                    <div class="meal-option-circle"></div>
+                </div>
+                <div class="meal-option" data-value="dinner" onclick="selectMealType(this)">
+                    <span>Dinner</span>
+                    <div class="meal-option-circle"></div>
+                </div>
+                <div class="meal-option" data-value="snacks" onclick="selectMealType(this)">
+                    <span>Snacks</span>
+                    <div class="meal-option-circle"></div>
+                </div>
+            </div>
+            
+            <div class="calculator-form">
+                <input type="number" id="grams" placeholder="Enter grams" disabled>
+                <select id="mealType" style="display: none;">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snacks">Snacks</option>
+                </select>
+            </div>
+            
+            <button onclick="logFood()">Add to Log</button>
+            
+            <div id="nutritionInfo"></div>
+        </div>
+        
+        <div class="card">
+            <h3>Today's Summary</h3>
+            <div class="summary-stats">
+                <div class="stat">
+                    <div class="stat-value" id="totalCalories">0</div>
+                    <div class="stat-label">Calories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="totalProtein">0</div>
+                    <div class="stat-label">Protein-g</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="totalCarbs">0</div>
+                    <div class="stat-label">Carbs-g</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="totalFats">0</div>
+                    <div class="stat-label">Fats-g</div>
+                </div>
+            </div>
+            
+            <div id="mealLogs"></div>
+        </div>
+    </div>
+
+    <script>
+        // Food database (you can add more items here)
+        const foodDatabase = [
+            {
+                name: "Apple",
+                calories: 52,
+                sodium: 1,
+                carbs: 14,
+                sugar: 10,
+                protein: 0.3,
+                fat: 0.2,
+                vitaminC: 7
+            },
+            // Add more food items in same format
+            {
+                name: "Banana",
+                calories: 89,
+                sodium: 1,
+                carbs: 23,
+                sugar: 12,
+                protein: 1.1,
+                fat: 0.3,
+                vitaminC: 14
+            },
+      
+            {
+                name: "Rice",
+                calories: 130,
+                sodium: 1,
+                carbs: 28,
+                sugar: 0.1,
+                protein: 2.7,
+                fat: 0.3,
+                vitaminC: 0
+            }
+        ];
+
+        let selectedFood = null;
+        
+        // Track recent searches
+        function useRecentSearch(foodName) {
+            document.getElementById('foodSearch').value = foodName;
+            const food = foodDatabase.find(f => f.name === foodName);
+            if (food) {
+                selectFood(food);
+            }
+        }
+
+        // Search functionality
+        document.getElementById('foodSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const results = foodDatabase.filter(food => 
+                food.name.toLowerCase().includes(searchTerm));
+            
+            const resultsDiv = document.getElementById('foodResults');
+            resultsDiv.innerHTML = '';
+            
+            if (searchTerm && results.length > 0) {
+                resultsDiv.style.display = 'block';
+                results.forEach(food => {
+                    const div = document.createElement('div');
+                    div.className = 'food-item';
+                    div.textContent = food.name;
+                    div.onclick = () => selectFood(food);
+                    resultsDiv.appendChild(div);
+                });
+            } else {
+                resultsDiv.style.display = 'none';
+            }
+        });
+
+        function selectFood(food) {
+            selectedFood = food;
+            document.getElementById('selectedFood').innerHTML = `
+                <strong>Selected:</strong> ${food.name} (per 100g)
+            `;
+            document.getElementById('grams').disabled = false;
+            document.getElementById('grams').focus();
+            updateNutritionInfo();
+        }
+        
+        // Meal type selection
+        function selectMealType(element) {
+            document.querySelectorAll('.meal-option').forEach(el => {
+                el.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            document.getElementById('mealType').value = element.getAttribute('data-value');
+        }
+
+        // Nutrition calculator
+        document.getElementById('grams').addEventListener('input', updateNutritionInfo);
+
+        function updateNutritionInfo() {
+            const grams = document.getElementById('grams').value;
+            if (!grams || !selectedFood) return;
+
+            const multiplier = grams / 100;
+            const infoDiv = document.getElementById('nutritionInfo');
+            
+            infoDiv.innerHTML = `
+                <div class="nutrition-item">
+                    <div class="nutrition-value">${(selectedFood.calories * multiplier).toFixed(1)}</div>
+                    <div class="nutrition-label">Calories</div>
+                </div>
+                <div class="nutrition-item">
+                    <div class="nutrition-value">${(selectedFood.sodium * multiplier).toFixed(1)}</div>
+                    <div class="nutrition-label">Sodium (mg)</div>
+                </div>
+                <div class="nutrition-item">
+                    <div class="nutrition-value">${(selectedFood.carbs * multiplier).toFixed(1)}</div>
+                    <div class="nutrition-label">Carbs (g)</div>
+                </div>
+                <div class="nutrition-item">
+                    <div class="nutrition-value">${(selectedFood.sugar * multiplier).toFixed(1)}</div>
+                    <div class="nutrition-label">Sugar (g)</div>
+                </div>
+                <div class="nutrition-item">
+                    <div class="nutrition-value">${(selectedFood.protein * multiplier).toFixed(1)}</div>
+                    <div class="nutrition-label">Protein (g)</div>
+                </div>
+                <div class="nutrition-item">
+                    <div class="nutrition-value">${(selectedFood.fat * multiplier).toFixed(1)}</div>
+                    <div class="nutrition-label">Fat (g)</div>
+                </div>
+                <div class="nutrition-item">
+                    <div class="nutrition-value">${(selectedFood.vitaminC * multiplier).toFixed(1)}</div>
+                    <div class="nutrition-label">Vitamin C (%)</div>
+                </div>
+            `;
+        }
+
+        // Food logging and local storage
+        function logFood() {
+            const grams = document.getElementById('grams').value;
+            const mealType = document.getElementById('mealType').value;
+            
+            if (!selectedFood || !grams) {
+                alert('Please select a food and enter grams');
+                return;
+            }
+
+            const multiplier = grams / 100;
+            const logEntry = {
+                food: selectedFood.name,
+                grams: grams,
+                calories: (selectedFood.calories * multiplier).toFixed(1),
+                protein: (selectedFood.protein * multiplier).toFixed(1),
+                carbs: (selectedFood.carbs * multiplier).toFixed(1),
+                fat: (selectedFood.fat * multiplier).toFixed(1),
+                mealType: mealType,
+                timestamp: new Date().getTime()
+            };
+
+            // Save to localStorage
+            const logs = JSON.parse(localStorage.getItem('foodLogs') || '[]');
+            logs.push(logEntry);
+            localStorage.setItem('foodLogs', JSON.stringify(logs));
+
+            updateLogDisplay();
+            resetCalculator();
+        }
+
+        function resetCalculator() {
+            selectedFood = null;
+            document.getElementById('foodSearch').value = '';
+            document.getElementById('grams').value = '';
+            document.getElementById('selectedFood').innerHTML = '';
+            document.getElementById('nutritionInfo').innerHTML = '';
+            document.getElementById('foodResults').style.display = 'none';
+            document.getElementById('grams').disabled = true;
+        }
+
+        function updateLogDisplay() {
+            const logs = JSON.parse(localStorage.getItem('foodLogs') || '[]');
+            const groupedLogs = {
+                breakfast: [],
+                lunch: [],
+                dinner: [],
+                snacks: []
+            };
+
+            logs.forEach(log => {
+                groupedLogs[log.mealType].push(log);
+            });
+
+            let totalCalories = 0;
+            let totalProtein = 0;
+            let totalCarbs = 0;
+            let totalFats = 0;
+            let logHTML = '';
+
+            Object.entries(groupedLogs).forEach(([mealType, entries]) => {
+                if (entries.length > 0) {
+                  logHTML += `<div class="meal-category">
+                        <div class="meal-category-title">${mealType.charAt(0).toUpperCase() + mealType.slice(1)}</div>`;
+                    
+                    entries.forEach(entry => {
+                        totalCalories += parseFloat(entry.calories);
+                        totalProtein += parseFloat(entry.protein || 0);
+                        totalCarbs += parseFloat(entry.carbs || 0);
+                        totalFats += parseFloat(entry.fat || 0);
+                        
+                        logHTML += `
+                            <div class="meal-entry">
+                                <div>${entry.food} - ${entry.grams}g (${entry.calories} kcal)</div>
+                                <span class="delete-btn" onclick="deleteLog(${entry.timestamp})">×</span>
+                            </div>
+                        `;
+                    });
+                    
+                    logHTML += `</div>`;
+                }
+            });
+
+            document.getElementById('mealLogs').innerHTML = logHTML;
+            document.getElementById('totalCalories').textContent = totalCalories.toFixed(0);
+            document.getElementById('totalProtein').textContent = totalProtein.toFixed(1);
+            document.getElementById('totalCarbs').textContent = totalCarbs.toFixed(1);
+            document.getElementById('totalFats').textContent = totalFats.toFixed(1);
+        }
+
+        function deleteLog(timestamp) {
+            const logs = JSON.parse(localStorage.getItem('foodLogs') || '[]');
+            const filteredLogs = logs.filter(log => log.timestamp !== timestamp);
+            localStorage.setItem('foodLogs', JSON.stringify(filteredLogs));
+            updateLogDisplay();
+        }
+
+        // Initial load
+        updateLogDisplay();
+    </script>
+</body>
+</html>  
