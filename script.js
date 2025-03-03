@@ -1,7 +1,357 @@
 
         // Food database (you can add more items here)
         const foodDatabase = [
-        
+
+      {
+  name: "Monstera Deliciosa",
+  calories: 52,
+  sodium: 1,
+  carbs: 13.6,
+  sugar: 0,
+  protein: 0.6,
+  fat: 0.2,
+  vitaminC: 40.6
+},
+{
+  name: "Morinda",
+  calories: 47,
+  sodium: 1,
+  carbs: 9.6,
+  sugar: 4.3,
+  protein: 0.7,
+  fat: 0.5,
+  vitaminC: 35
+},
+{
+  name: "Mountain Soursop",
+  calories: 66,
+  sodium: 14,
+  carbs: 16.8,
+  sugar: 13.5,
+  protein: 1,
+  fat: 0.3,
+  vitaminC: 20.6
+},          
+     {
+    name: "Naranjilla",
+    calories: 25,
+    sodium: 1,
+    carbs: 5.9,
+    sugar: 3.1,
+    protein: 0.7,
+    fat: 0.2,
+    vitaminC: 31.2
+  },
+  {
+    name: "Natal Plum",
+    calories: 62,
+    sodium: 1,
+    carbs: 14.3,
+    sugar: 0,
+    protein: 1.1,
+    fat: 0.5,
+    vitaminC: 38
+  },
+  {
+    name: "Noni",
+    calories: 47,
+    sodium: 1,
+    carbs: 9.6,
+    sugar: 4.3,
+    protein: 0.7,
+    fat: 0.5,
+    vitaminC: 35
+  },
+  {
+    name: "Olallieberry",
+    calories: 43,
+    sodium: 1,
+    carbs: 9.6,
+    sugar: 4.3,
+    protein: 1.4,
+    fat: 0.5,
+    vitaminC: 21
+  },
+  {
+    name: "Oregon Grape",
+    calories: 56,
+    sodium: 1,
+    carbs: 13.8,
+    sugar: 7.4,
+    protein: 1.4,
+    fat: 0.2,
+    vitaminC: 41
+  },
+  {
+    name: "Otaheite Apple",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Palmyra Fruit",
+    calories: 43,
+    sodium: 1,
+    carbs: 9.6,
+    sugar: 4.3,
+    protein: 0.7,
+    fat: 0.5,
+    vitaminC: 35
+  },
+  {
+    name: "Pepino",
+    calories: 21,
+    sodium: 2,
+    carbs: 4.8,
+    sugar: 3.5,
+    protein: 0.6,
+    fat: 0.1,
+    vitaminC: 22.4
+  },
+  {
+    name: "Phalsa",
+    calories: 43,
+    sodium: 1,
+    carbs: 9.6,
+    sugar: 4.3,
+    protein: 0.7,
+    fat: 0.5,
+    vitaminC: 35
+  },
+  {
+    name: "Pili Nut Fruit",
+    calories: 719,
+    sodium: 2,
+    carbs: 4.6,
+    sugar: 0,
+    protein: 10.8,
+    fat: 79.6,
+    vitaminC: 0
+  },
+  {
+    name: "Pitomba",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Pomelo",
+    calories: 38,
+    sodium: 1,
+    carbs: 9.6,
+    sugar: 0,
+    protein: 0.8,
+    fat: 0.1,
+    vitaminC: 61
+  },
+  {
+    name: "Pulasan",
+    calories: 68,
+    sodium: 11,
+    carbs: 16,
+    sugar: 0,
+    protein: 0.9,
+    fat: 0.2,
+    vitaminC: 4.9
+  },
+  {
+    name: "Purple Mangosteen",
+    calories: 73,
+    sodium: 7,
+    carbs: 17.9,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.6,
+    vitaminC: 2.9
+  },
+  {
+    name: "Quararibea Cordata",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Red Banana",
+    calories: 89,
+    sodium: 1,
+    carbs: 23,
+    sugar: 12,
+    protein: 1.1,
+    fat: 0.3,
+    vitaminC: 14
+  },
+  {
+    name: "Rollinia",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Salal Berry",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Salmonberry",
+    calories: 47,
+    sodium: 1,
+    carbs: 9.6,
+    sugar: 4.3,
+    protein: 0.7,
+    fat: 0.5,
+    vitaminC: 35
+  },
+  {
+    name: "Sandoricum Koetjape",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Satsuma",
+    calories: 47,
+    sodium: 0,
+    carbs: 11.8,
+    sugar: 9.4,
+    protein: 0.9,
+    fat: 0.2,
+    vitaminC: 53.2
+  },
+  {
+    name: "Sea Buckthorn",
+    calories: 82,
+    sodium: 4,
+    carbs: 10.2,
+    sugar: 0,
+    protein: 1.7,
+    fat: 5.4,
+    vitaminC: 695
+  },
+  {
+    name: "Serviceberry",
+    calories: 79,
+    sodium: 3,
+    carbs: 20,
+    sugar: 0,
+    protein: 1.2,
+    fat: 0.2,
+    vitaminC: 69
+  },
+  {
+    name: "Sloe Berry",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Soncoya",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Surinam Cherry",
+    calories: 33,
+    sodium: 1,
+    carbs: 7.7,
+    sugar: 0,
+    protein: 0.4,
+    fat: 0.3,
+    vitaminC: 1677.6
+  },
+  {
+    name: "Sweet Granadilla",
+    calories: 97,
+    sodium: 28,
+    carbs: 23,
+    sugar: 11,
+    protein: 2.2,
+    fat: 0.7,
+    vitaminC: 30
+  },
+  {
+    name: "Tamarind",
+    calories: 239,
+    sodium: 28,
+    carbs: 62.5,
+    sugar: 57.4,
+    protein: 2.8,
+    fat: 0.6,
+    vitaminC: 3.5
+  },
+  {
+    name: "Thimbleberry",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Ugni",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Velvet Apple",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Yuzu",
+    calories: 30,
+    sodium: 2,
+    carbs: 11,
+    sugar: 1.7,
+    protein: 0.7,
+    fat: 0.2,
+    vitaminC: 29.1
+  },             
   {
     name: "Ackee",
     calories: 151,
