@@ -2,6 +2,456 @@
         // Food database (you can add more items here)
         const foodDatabase = [
 
+     {
+    name: "African Breadfruit",
+    calories: 180,
+    sodium: 5,
+    carbs: 40,
+    sugar: 10,
+    protein: 5,
+    fat: 1,
+    vitaminC: 20
+  },
+  {
+    name: "African Cherry Orange",
+    calories: 47,
+    sodium: 1,
+    carbs: 12,
+    sugar: 9,
+    protein: 1,
+    fat: 0.2,
+    vitaminC: 50
+  },
+  {
+    name: "African Custard Apple",
+    calories: 94,
+    sodium: 5,
+    carbs: 23.6,
+    sugar: 18,
+    protein: 2.1,
+    fat: 0.6,
+    vitaminC: 36.3
+  },
+  {
+    name: "African Mango",
+    calories: 60,
+    sodium: 1,
+    carbs: 15,
+    sugar: 14,
+    protein: 0.8,
+    fat: 0.4,
+    vitaminC: 36.4
+  },
+  {
+    name: "African Star Apple",
+    calories: 67,
+    sodium: 1,
+    carbs: 16.8,
+    sugar: 0,
+    protein: 0.7,
+    fat: 0.4,
+    vitaminC: 14.7
+  },
+  {
+    name: "Alligator Apple",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Amazon Grape",
+    calories: 69,
+    sodium: 2,
+    carbs: 18,
+    sugar: 16,
+    protein: 0.7,
+    fat: 0.2,
+    vitaminC: 3.2
+  },
+  {
+    name: "American Mayapple",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Andean Blackberry",
+    calories: 43,
+    sodium: 1,
+    carbs: 9.6,
+    sugar: 4.3,
+    protein: 1.4,
+    fat: 0.5,
+    vitaminC: 21
+  },
+  {
+    name: "Annatto",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Araçá",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Australian Finger Lime",
+    calories: 30,
+    sodium: 2,
+    carbs: 11,
+    sugar: 1.7,
+    protein: 0.7,
+    fat: 0.2,
+    vitaminC: 29.1
+  },
+  {
+    name: "Australian Round Lime",
+    calories: 30,
+    sodium: 2,
+    carbs: 11,
+    sugar: 1.7,
+    protein: 0.7,
+    fat: 0.2,
+    vitaminC: 29.1
+  },
+  {
+    name: "Bacaba",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Beach Plum",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Beech Nut Fruit",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Betel Nut",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Bignonia Fruit",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Bilimbi",
+    calories: 31,
+    sodium: 2,
+    carbs: 6.7,
+    sugar: 3.9,
+    protein: 1,
+    fat: 0.3,
+    vitaminC: 34.4
+  },
+  {
+    name: "Biriba",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Black Apple",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Black Mulga Plum",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Black Raspberry",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Blackcurrant",
+    calories: 63,
+    sodium: 2,
+    carbs: 15.4,
+    sugar: 0,
+    protein: 1.4,
+    fat: 0.4,
+    vitaminC: 181
+  },
+  {
+    name: "Blue Tongue Fruit",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Bolwarra",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Brazilian Guava",
+    calories: 68,
+    sodium: 2,
+    carbs: 14,
+    sugar: 9,
+    protein: 2.6,
+    fat: 1,
+    vitaminC: 228.3
+  },
+  {
+    name: "Brazilian Pepper Fruit",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Broadleaf Bramble",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Buddha Coconut",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Burmese Grape",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Button Mangosteen",
+    calories: 73,
+    sodium: 7,
+    carbs: 17.9,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.6,
+    vitaminC: 2.9
+  },
+  {
+    name: "Cacao (Cocoa Fruit)",
+    calories: 228,
+    sodium: 21,
+    carbs: 58,
+    sugar: 1.5,
+    protein: 20,
+    fat: 14,
+    vitaminC: 0
+  },
+  {
+    name: "Calamansi",
+    calories: 29,
+    sodium: 2,
+    carbs: 6.9,
+    sugar: 2.5,
+    protein: 1.1,
+    fat: 0.3,
+    vitaminC: 53
+  },
+  {
+    name: "Calabash Fruit",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Camachile",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Candle Nut Fruit",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Capulin Cherry",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Catawba Grape",
+    calories: 69,
+    sodium: 2,
+    carbs: 18,
+    sugar: 16,
+    protein: 0.7,
+    fat: 0.2,
+    vitaminC: 3.2
+  },
+  {
+    name: "Catmon Fruit",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Cedar Bay Cherry",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Ceiba Fruit",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Chalta Fruit",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Chapote",
+    calories: 52,
+    sodium: 1,
+    carbs: 13.6,
+    sugar: 0,
+    protein: 0.6,
+    fat: 0.2,
+    vitaminC: 40.6
+  },
+  {
+    name: "Chayote",
+    calories: 19,
+    sodium: 2,
+    carbs: 4.5,
+    sugar: 1.7,
+    protein: 0.8,
+    fat: 0.1,
+    vitaminC: 7.7
+  }             
       {
   name: "Monstera Deliciosa",
   calories: 52,
