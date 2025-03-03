@@ -451,7 +451,7 @@
     protein: 0.8,
     fat: 0.1,
     vitaminC: 7.7
-  }             
+  },             
       {
   name: "Monstera Deliciosa",
   calories: 52,
